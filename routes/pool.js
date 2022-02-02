@@ -2,11 +2,11 @@ var mysql = require('mysql')
 
 const pool = mysql.createPool({
 
-   host:'localhost',
-   user: 'root',
-  password : '123',
+   host:'db-mysql-sfo2-83388-do-user-10742627-0.b.db.ondigitalocean.com',
+   user: 'doadmin',
+  password : 'SUlSXYMpVo2fdHQM',
     database: 'rajo_app',
-    port:'3306' ,
+    port:'25060' ,
     multipleStatements: true
   })
 

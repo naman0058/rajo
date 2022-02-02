@@ -234,4 +234,21 @@ router.post('/myhistory',(req,res)=>{
     })
 })
 
+
+
+router.post('/getdatebyreport',(req,res)=>{
+    pool.query(`select dates from reports where userid = '${req.body.userid}'`,(err,result)=>{
+        if(err) throw err;
+        else{
+
+            permittedValues = [];
+            for (i = 0; i < result.length; i++){
+                result[i] = result[i]["dates"];
+            }
+            console.log('dd',result)
+             res.json(result)
+            }
+    })
+})
+
 module.exports = router;
