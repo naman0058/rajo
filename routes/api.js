@@ -180,7 +180,7 @@ router.post('/save_das28_crp', (req, res) => {
 
 
 router.post('/save_cdai', (req, res) => {
-    pool.query(`update reports set ? where id = ? and date = ?`, [req.body, req.body.id , today], (err, result) => {
+    pool.query(`update reports set ? where id = ? and dates = ?`, [req.body, req.body.id , today], (err, result) => {
         if(err) {
             res.json({
                 status:500,
