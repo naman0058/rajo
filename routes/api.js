@@ -102,7 +102,7 @@ router.post('/save_my_day',(req,res)=>{
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
     
-    today = mm + '/' + dd + '/' + yyyy;
+    today = yyyy + '-' + mm + '-' + dd;
 
     let medications1 = req.body.medications;
 
@@ -180,7 +180,7 @@ router.post('/save_das28_crp', (req, res) => {
 
 
 router.post('/save_cdai', (req, res) => {
-    pool.query(`update reports set ? where id = ?`, [req.body, req.body.id], (err, result) => {
+    pool.query(`update reports set ? where id = ? and date = ?`, [req.body, req.body.id , today], (err, result) => {
         if(err) {
             res.json({
                 status:500,
