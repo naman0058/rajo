@@ -339,6 +339,7 @@ router.post('/save_das28_crp', (req, res) => {
      else if(result[0]){
         body['crp'] = 0.56*Math.sqrt(+req.body.tjc) +0.28*Math.sqrt(+req.body.sjc)+0.36*Math.log(+req.body.crp+1)+0.014*(+req.body.patient_g_activity)+0.96;
 
+        console.log('and',0.56*Math.sqrt(+req.body.tjc) +0.28*Math.sqrt(+req.body.sjc)+0.36*Math.log(+req.body.crp+1)+0.014*(+req.body.patient_g_activity)+0.96)
 
         if(req.body.language == 'en'){
             if(req.body.crp < 2.6){
