@@ -163,7 +163,7 @@ router.post('/save_das28_esr', (req, res) => {
     pool.query(`select * from reports where dates = '${today}' and userid = '${req.body.userid}'`,(err,result)=>{
       if(err) throw err;
       else if(result[0]){
-        body['esr'] = 0.56*Math.sqrt(+req.body.tjc) +0.28*Math.sqrt(+req.body.sjc)+0.014*(+req.body.patient_g_activity)+0.70*(+req.body.esr);
+        body['esr'] = 0.56*Math.sqrt(+req.body.tjc) +0.28*Math.sqrt(+req.body.sjc)+0.014*(+req.body.patient_g_activity)+0.70*Math.log(+req.body.esr);
 
         if(req.body.language == 'en'){
             if(req.body.esr < 2.6){
@@ -239,7 +239,8 @@ router.post('/save_das28_esr', (req, res) => {
         })
       }
       else {
-        body['esr'] = 0.56*Math.sqrt(+req.body.tjc) +0.28*Math.sqrt(+req.body.sjc)+0.014*(+req.body.patient_g_activity)+0.70*(+req.body.esr);
+        body['esr'] = 0.56*Math.sqrt(+req.body.tjc) +0.28*Math.sqrt(+req.body.sjc)+0.014*(+req.body.patient_g_activity)+0.70*Math.log(+req.body.esr);
+
 
         if(req.body.language == 'en'){
             if(req.body.esr < 2.6){
@@ -415,8 +416,8 @@ router.post('/save_das28_crp', (req, res) => {
      }
      else{
 
-        body['crp'] = 0.56*Math.sqrt(+req.body.tjc) +0.28*Math.sqrt(+req.body.sjc)+0.014*(+req.body.patient_g_activity)+0.36*(+req.body.crp+1)+0.96;
-
+        body['crp'] = 0.56*Math.sqrt(+req.body.tjc) +0.28*Math.sqrt(+req.body.sjc)+0.36*Math.log(+req.body.crp+1)+0.014*(+req.body.patient_g_activity)+0.96;
+       
 
         if(req.body.language == 'en'){
             if(req.body.crp < 2.6){
