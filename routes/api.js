@@ -166,46 +166,46 @@ router.post('/save_das28_esr', (req, res) => {
         body['esr'] = 0.56*Math.sqrt(+req.body.tjc) +0.28*Math.sqrt(+req.body.sjc)+0.014*(+req.body.patient_g_activity)+0.70*Math.log(+req.body.esr);
 
         if(req.body.language == 'en'){
-            if(req.body.esr < 2.6){
+            if((+req.body.esr) <= 2.6){
                 body['esr_status'] = 'Disease in Remission';
                 body['esr_color'] = 'green';
         
                 
             } 
-            else if(req.body.esr > 2.6){
+            else if((+req.body.esr) >= 2.6 && (+req.body.esr) > 3.19){
                 body['esr_status'] = 'Low Disease Activity';
                 body['esr_color'] = 'yellow';
         
             } 
-            else if(req.body.esr > 3.2){
+            else if((+req.body.esr) >= 3.2 && (+req.body.esr) > 5.09){
                 body['esr_status'] = 'Moderate Disease Activity';
-                body['esr_color'] = 'lightred';
+                body['esr_color'] = 'pink';
         
             } 
-            else if(req.body.esr > 5.1){
+            else if((+req.body.esr) >= 5.1){
                 body['esr_status'] = 'High Disease Activity';
                 body['esr_color'] = 'red';
         
             } 
         }
         else {
-            if(req.body.esr < 2.6){
+            if((+req.body.esr) <= 2.6){
                 body['esr_status'] = 'المرض ساكن (غير نشط)';
                 body['esr_color'] = 'green';
         
                 
             } 
-            else if(req.body.esr > 2.6){
+            else if((+req.body.esr) >= 2.6 && (+req.body.esr) > 3.19){
                 body['esr_status'] = 'Low نشاط المرض';
                 body['esr_color'] = 'yellow';
         
             } 
-            else if(req.body.esr > 3.2){
+            else if((+req.body.esr) >= 3.2 && (+req.body.esr) > 5.09 ){
                 body['esr_status'] = 'Moderate نشاط المرض';
-                body['esr_color'] = 'lightred';
+                body['esr_color'] = 'pink';
         
             } 
-            else if(req.body.esr > 5.1){
+            else if((+req.body.esr) >= 5.1){
                 body['esr_status'] = 'High نشاط المرض';
                 body['esr_color'] = 'red';
         
@@ -243,46 +243,46 @@ router.post('/save_das28_esr', (req, res) => {
 
 
         if(req.body.language == 'en'){
-            if(req.body.esr < 2.6){
+            if((+req.body.esr) <= 2.6){
                 body['esr_status'] = 'Disease in Remission';
                 body['esr_color'] = 'green';
         
                 
             } 
-            else if(req.body.esr > 2.6){
+            else if((+req.body.esr) >= 2.6  && (+req.body.esr) > 3.19){
                 body['esr_status'] = 'Low Disease Activity';
                 body['esr_color'] = 'yellow';
         
             } 
-            else if(req.body.esr > 3.2){
+            else if((+req.body.esr) >= 3.2 && (+req.body.esr) > 5.09){
                 body['esr_status'] = 'Moderate Disease Activity';
-                body['esr_color'] = 'lightred';
+                body['esr_color'] = 'pink';
         
             } 
-            else if(req.body.esr > 5.1){
+            else if((+req.body.esr) >= 5.1){
                 body['esr_status'] = 'High Disease Activity';
                 body['esr_color'] = 'red';
         
             } 
         }
         else {
-            if(req.body.esr < 2.6){
+            if((+req.body.esr) <= 2.6){
                 body['esr_status'] = 'المرض ساكن (غير نشط)';
                 body['esr_color'] = 'green';
         
                 
             } 
-            else if(req.body.esr > 2.6){
+            else if((+req.body.esr) >= 2.6 && (+req.body.esr) > 3.19){
                 body['esr_status'] = 'Low نشاط المرض';
                 body['esr_color'] = 'yellow';
         
             } 
-            else if(req.body.esr > 3.2){
+            else if((+req.body.esr) >= 3.2 && (+req.body.esr) > 5.09){
                 body['esr_status'] = 'Moderate نشاط المرض';
-                body['esr_color'] = 'lightred';
+                body['esr_color'] = 'pink';
         
             } 
-            else if(req.body.esr > 5.1){
+            else if((+req.body.esr) >= 5.1){
                 body['esr_status'] = 'High نشاط المرض';
                 body['esr_color'] = 'red';
         
@@ -343,20 +343,20 @@ router.post('/save_das28_crp', (req, res) => {
         console.log('and',0.56*Math.sqrt(+req.body.tjc) +0.28*Math.sqrt(+req.body.sjc)+0.36*Math.log(+req.body.crp+1)+0.014*(+req.body.patient_g_activity)+0.96)
 
         if(req.body.language == 'en'){
-            if((+req.body.crp) < 2.6){
+            if((+req.body.crp) <= 2.6){
                 body['crp_status'] = 'Disease in Remission';
                 body['crp_color'] = 'green';
         
                 
             } 
-            else if((+req.body.crp) > 2.6 && (+req.body.crp) <3.19){
+            else if((+req.body.crp) >= 2.6 && (+req.body.crp) <3.19){
                 body['crp_status'] = 'Low Disease Activity';
                 body['crp_color'] = 'yellow';
         
             } 
             else if((+req.body.crp) >= 3.2 && (+req.body.crp) <5.09){
                 body['crp_status'] = 'Moderate Disease Activity';
-                body['crp_color'] = 'lightred';
+                body['crp_color'] = 'pink';
         
             } 
             else if((+req.body.crp) >= 5.1){
@@ -366,20 +366,20 @@ router.post('/save_das28_crp', (req, res) => {
             } 
         }
         else {
-            if((+req.body.crp) < 2.6){
+            if((+req.body.crp) <= 2.6){
                 body['crp_status'] = 'المرض ساكن (غير نشط)';
                 body['crp_color'] = 'green';
         
                 
             } 
-            else if((+req.body.crp) > 2.6 && (+req.body.crp) <3.19){
+            else if((+req.body.crp) >= 2.6 && (+req.body.crp) <3.19){
                 body['crp_status'] = 'Low نشاط المرض';
                 body['crp_color'] = 'yellow';
         
             } 
-            else if((+req.body.crp) > 3.2 && (+req.body.crp) <5.09){
+            else if((+req.body.crp) >= 3.2 && (+req.body.crp) <5.09){
                 body['crp_status'] = 'Moderate نشاط المرض';
-                body['crp_color'] = 'lightred';
+                body['crp_color'] = 'pink';
         
             } 
             else if((+req.body.crp) >= 5.1){
@@ -420,46 +420,46 @@ router.post('/save_das28_crp', (req, res) => {
        
 
         if(req.body.language == 'en'){
-            if(req.body.crp < 2.6){
+            if(req.body.crp <= 2.6){
                 body['crp_status'] = 'Disease in Remission';
                 body['crp_color'] = 'green';
         
                 
             } 
-            else if(req.body.crp > 2.6){
+            else if(req.body.crp >= 2.6 && (+req.body.crp) <3.19 ){
                 body['crp_status'] = 'Low Disease Activity';
                 body['crp_color'] = 'yellow';
         
             } 
-            else if(req.body.crp > 3.2){
+            else if(req.body.crp >= 3.2 && (+req.body.crp) <5.09){
                 body['crp_status'] = 'Moderate Disease Activity';
-                body['crp_color'] = 'lightred';
+                body['crp_color'] = 'pink';
         
             } 
-            else if(req.body.crp > 5.1){
+            else if(req.body.crp >= 5.1){
                 body['crp_status'] = 'High Disease Activity';
                 body['crp_color'] = 'red';
         
             } 
         }
         else {
-            if(req.body.crp < 2.6){
+            if(req.body.crp <= 2.6){
                 body['crp_status'] = 'المرض ساكن (غير نشط)';
                 body['crp_color'] = 'green';
         
                 
             } 
-            else if(req.body.crp > 2.6){
+            else if(req.body.crp >= 2.6 && (+req.body.crp) <3.19){
                 body['crp_status'] = 'Low نشاط المرض';
                 body['crp_color'] = 'yellow';
         
             } 
-            else if(req.body.crp > 3.2){
+            else if(req.body.crp >= 3.2 && (+req.body.crp) <5.09){
                 body['crp_status'] = 'Moderate نشاط المرض';
-                body['crp_color'] = 'lightred';
+                body['crp_color'] = 'pink';
         
             } 
-            else if(req.body.crp > 5.1){
+            else if(req.body.crp >= 5.1){
                 body['crp_status'] = 'High نشاط المرض';
                 body['crp_color'] = 'red';
         
@@ -521,46 +521,46 @@ router.post('/save_cdai', (req, res) => {
 
 
     if(req.body.language == 'en'){
-        if(req.body.cdai < 2.8){
+        if((+req.body.cdai) <= 2.8 ){
             body['cdai_status'] = 'Disease in Remission';
             body['cdai_color'] = 'green';
     
             
         } 
-        else if(req.body.cdai > 2.8){
+        else if((+req.body.cdai) >= 2.8 && (+req.body.cdai) <9.9){
             body['cdai_status'] = 'Low Disease Activity';
             body['cdai_color'] = 'yellow';
     
         } 
-        else if(req.body.cdai > 10){
+        else if((+req.body.cdai) >= 10 && (+req.body.cdai) <21.9){
             body['cdai_status'] = 'Moderate Disease Activity';
-            body['cdai_color'] = 'lightred';
+            body['cdai_color'] = 'pink';
     
         } 
-        else if(req.body.cdai > 22){
+        else if((+req.body.cdai) >= 22){
             body['cdai_status'] = 'High Disease Activity';
             body['cdai_color'] = 'red';
     
         } 
     }
     else {
-        if(req.body.cdai < 2.8){
+        if((+req.body.cdai) <= 2.8){
             body['cdai_status'] = 'المرض ساكن (غير نشط)';
             body['cdai_color'] = 'green';
     
             
         } 
-        else if(req.body.cdai > 2.8){
+        else if((+req.body.cdai) >= 2.8 && (+req.body.cdai) <9.9){
             body['cdai_status'] = 'Low نشاط المرض';
             body['cdai_color'] = 'yellow';
     
         } 
-        else if(req.body.cdai > 10){
+        else if((+req.body.cdai) >= 10 && (+req.body.cdai) <21.9){
             body['cdai_status'] = 'Moderate نشاط المرض';
-            body['cdai_color'] = 'lightred';
+            body['cdai_color'] = 'pink';
     
         } 
-        else if(req.body.cdai > 22){
+        else if((+req.body.cdai) >= 22){
             body['cdai_status'] = 'High نشاط المرض';
             body['cdai_color'] = 'red';
     
@@ -606,46 +606,46 @@ router.post('/save_cdai', (req, res) => {
 
 
             if(req.body.language == 'en'){
-                if(req.body.cdai < 2.8){
+                if(req.body.cdai <= 2.8){
                     body['cdai_status'] = 'Disease in Remission';
                     body['cdai_color'] = 'green';
             
                     
                 } 
-                else if(req.body.cdai > 2.8){
+                else if(req.body.cdai >= 2.8 && (+req.body.cdai) <9.9){
                     body['cdai_status'] = 'Low Disease Activity';
                     body['cdai_color'] = 'yellow';
             
                 } 
-                else if(req.body.cdai > 10){
+                else if(req.body.cdai >= 10 && (+req.body.cdai) <21.9){
                     body['cdai_status'] = 'Moderate Disease Activity';
-                    body['cdai_color'] = 'lightred';
+                    body['cdai_color'] = 'pink';
             
                 } 
-                else if(req.body.cdai > 22){
+                else if(req.body.cdai >= 22){
                     body['cdai_status'] = 'High Disease Activity';
                     body['cdai_color'] = 'red';
             
                 } 
             }
             else {
-                if(req.body.cdai < 2.8){
+                if(req.body.cdai <= 2.8){
                     body['cdai_status'] = 'المرض ساكن (غير نشط)';
                     body['cdai_color'] = 'green';
             
                     
                 } 
-                else if(req.body.cdai > 2.8){
+                else if(req.body.cdai >= 2.8 && (+req.body.cdai) <9.9){
                     body['cdai_status'] = 'Low نشاط المرض';
                     body['cdai_color'] = 'yellow';
             
                 } 
-                else if(req.body.cdai > 10){
+                else if(req.body.cdai >= 10 && (+req.body.cdai) <9.9){
                     body['cdai_status'] = 'Moderate نشاط المرض';
-                    body['cdai_color'] = 'lightred';
+                    body['cdai_color'] = 'pink';
             
                 } 
-                else if(req.body.cdai > 22){
+                else if(req.body.cdai >= 22){
                     body['cdai_status'] = 'High نشاط المرض';
                     body['cdai_color'] = 'red';
             
