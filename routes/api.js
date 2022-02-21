@@ -172,12 +172,12 @@ router.post('/save_das28_esr', (req, res) => {
         
                 
             } 
-            else if((+req.body.esr) >= 2.6 && (+req.body.esr) > 3.19){
+            else if((+req.body.esr) >= 2.6 && (+req.body.esr) < 3.19){
                 body['esr_status'] = 'Low Disease Activity';
                 body['esr_color'] = 'yellow';
         
             } 
-            else if((+req.body.esr) >= 3.2 && (+req.body.esr) > 5.09){
+            else if((+req.body.esr) >= 3.2 && (+req.body.esr) < 5.09){
                 body['esr_status'] = 'Moderate Disease Activity';
                 body['esr_color'] = 'pink';
         
@@ -200,7 +200,7 @@ router.post('/save_das28_esr', (req, res) => {
                 body['esr_color'] = 'yellow';
         
             } 
-            else if((+req.body.esr) >= 3.2 && (+req.body.esr) > 5.09 ){
+            else if((+req.body.esr) >= 3.2 && (+req.body.esr) < 5.09 ){
                 body['esr_status'] = 'Moderate نشاط المرض';
                 body['esr_color'] = 'pink';
         
@@ -249,12 +249,12 @@ router.post('/save_das28_esr', (req, res) => {
         
                 
             } 
-            else if((+req.body.esr) >= 2.6  && (+req.body.esr) > 3.19){
+            else if((+req.body.esr) >= 2.6  && (+req.body.esr) < 3.19){
                 body['esr_status'] = 'Low Disease Activity';
                 body['esr_color'] = 'yellow';
         
             } 
-            else if((+req.body.esr) >= 3.2 && (+req.body.esr) > 5.09){
+            else if((+req.body.esr) >= 3.2 && (+req.body.esr) < 5.09){
                 body['esr_status'] = 'Moderate Disease Activity';
                 body['esr_color'] = 'pink';
         
@@ -272,12 +272,12 @@ router.post('/save_das28_esr', (req, res) => {
         
                 
             } 
-            else if((+req.body.esr) >= 2.6 && (+req.body.esr) > 3.19){
+            else if((+req.body.esr) >= 2.6 && (+req.body.esr) < 3.19){
                 body['esr_status'] = 'Low نشاط المرض';
                 body['esr_color'] = 'yellow';
         
             } 
-            else if((+req.body.esr) >= 3.2 && (+req.body.esr) > 5.09){
+            else if((+req.body.esr) >= 3.2 && (+req.body.esr) < 5.09){
                 body['esr_status'] = 'Moderate نشاط المرض';
                 body['esr_color'] = 'pink';
         
