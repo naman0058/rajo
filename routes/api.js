@@ -343,46 +343,46 @@ router.post('/save_das28_crp', (req, res) => {
         console.log('and',0.56*Math.sqrt(+req.body.tjc) +0.28*Math.sqrt(+req.body.sjc)+0.36*Math.log(+req.body.crp+1)+0.014*(+req.body.patient_g_activity)+0.96)
 
         if(req.body.language == 'en'){
-            if(req.body.crp < 2.6){
+            if((+req.body.crp) < 2.6){
                 body['crp_status'] = 'Disease in Remission';
                 body['crp_color'] = 'green';
         
                 
             } 
-            else if(req.body.crp > 2.6){
+            else if((+req.body.crp) > 2.6 && (+req.body.crp) <3.19){
                 body['crp_status'] = 'Low Disease Activity';
                 body['crp_color'] = 'yellow';
         
             } 
-            else if(req.body.crp > 3.2){
+            else if((+req.body.crp) >= 3.2 && (+req.body.crp) <5.09){
                 body['crp_status'] = 'Moderate Disease Activity';
                 body['crp_color'] = 'lightred';
         
             } 
-            else if(req.body.crp > 5.1){
+            else if((+req.body.crp) >= 5.1){
                 body['crp_status'] = 'High Disease Activity';
                 body['crp_color'] = 'red';
         
             } 
         }
         else {
-            if(req.body.crp < 2.6){
+            if((+req.body.crp) < 2.6){
                 body['crp_status'] = 'المرض ساكن (غير نشط)';
                 body['crp_color'] = 'green';
         
                 
             } 
-            else if(req.body.crp > 2.6){
+            else if((+req.body.crp) > 2.6 && (+req.body.crp) <3.19){
                 body['crp_status'] = 'Low نشاط المرض';
                 body['crp_color'] = 'yellow';
         
             } 
-            else if(req.body.crp > 3.2){
+            else if((+req.body.crp) > 3.2 && (+req.body.crp) <5.09){
                 body['crp_status'] = 'Moderate نشاط المرض';
                 body['crp_color'] = 'lightred';
         
             } 
-            else if(req.body.crp > 5.1){
+            else if((+req.body.crp) >= 5.1){
                 body['crp_status'] = 'High نشاط المرض';
                 body['crp_color'] = 'red';
         
