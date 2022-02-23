@@ -158,6 +158,13 @@ router.post('/save_das28_esr', (req, res) => {
     var yyyy = today.getFullYear();
     
     today = yyyy + '-' + mm + '-' + dd;
+
+
+    body['crp'] = null;
+    body['crp_status'] = null;
+    body['cdai'] = null;
+    body['cdai_status'] = null;
+
     console.log(req.body)
 
     pool.query(`select * from reports where dates = '${today}' and userid = '${req.body.userid}'`,(err,result)=>{
@@ -335,6 +342,8 @@ router.post('/save_das28_crp', (req, res) => {
 
     body['esr'] = null;
     body['esr_status'] = null;
+    body['cdai'] = null;
+    body['cdai_status'] = null;
 
 
  
@@ -515,6 +524,12 @@ router.post('/save_cdai', (req, res) => {
     var yyyy = today.getFullYear();
     
     today = yyyy + '-' + mm + '-' + dd;
+
+
+    body['esr'] = null;
+    body['esr_status'] = null;
+    body['crp'] = null;
+    body['crp_status'] = null;
 
     pool.query(`select * from reports where dates = '${today}' and userid = '${req.body.userid}'`,(err,result)=>{
         if(err) throw err;
