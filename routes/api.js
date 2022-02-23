@@ -333,6 +333,9 @@ router.post('/save_das28_crp', (req, res) => {
     
     today = yyyy + '-' + mm + '-' + dd;
 
+    body['esr'] = null;
+    body['esr_status'] = null;
+
 
  
     pool.query(`select * from reports where dates = '${today}' and userid = '${req.body.userid}'`,(err,result)=>{
